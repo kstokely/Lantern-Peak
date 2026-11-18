@@ -1,0 +1,36 @@
+<title>Lantern Peak</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: one full-screen 4:3 game stage, letterboxed on night-violet. Single dark look by design. */
+  :root {
+    --night: #1d1a3a;
+    --snow: #e6eeff;
+    --lantern: #ff8a1f;
+    --font-ui: "Trebuchet MS", "Verdana", sans-serif;
+    color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body {
+    background: var(--night);
+    color: var(--snow);
+    font-family: var(--font-ui);
+    overflow: hidden;
+    touch-action: none;
+    padding-left: max(0px, env(safe-area-inset-left, 0px));
+    padding-right: max(0px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+  #game { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  #game canvas { display: block; }
+  #loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem; letter-spacing: 0.04em; color: var(--lantern); pointer-events: none; }
+</style>
+<div id="loading">Lighting the lanterns…</div>
+<div id="game"></div>
+<script>
+  // Hide the loading note once the game canvas exists.
+  new MutationObserver(function (_, o) {
+    if (document.querySelector('#game canvas')) { document.getElementById('loading').hidden = true; o.disconnect(); }
+  }).observe(document.getElementById('game'), { childList: true });
+</script>
+<script type="module" src="game.js"></script>

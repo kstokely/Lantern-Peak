@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output (npm run build)
+dist/
+
+# Copy of the built bundle used when publishing the artifact page
+artifact/game.js
+
+# Logs and editor/OS files
+*.log
+.vite/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local environment files
+.env
+.env.*

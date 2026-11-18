@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lantern Peak art preview</title>
+    <style>
+      body { margin: 0; padding: 16px 24px 80px; background: #6b6b74; color: #fff8ea; font: 14px/1.4 "Trebuchet MS", Verdana, sans-serif; }
+      h1 { margin: 4px 0 4px; font-size: 26px; }
+      h2 { margin: 28px 0 8px; font-size: 20px; border-bottom: 2px solid #1d1a3a; padding-bottom: 4px; }
+      h3 { margin: 14px 0 6px; font-size: 15px; color: #e6eeff; }
+      .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+      .cell { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; color: #e6eeff; }
+      .grey { background: #808088; }
+      .snow { background: #e6eeff; }
+      .dark { background: #1d1a3a; }
+      canvas { image-rendering: auto; display: block; }
+      .tile { padding: 4px; border-radius: 4px; }
+      .mock canvas { width: 640px; height: 480px; border: 2px solid #1d1a3a; }
+      #stats { font-family: Consolas, monospace; background: #1d1a3a; padding: 8px 10px; border-radius: 6px; white-space: pre; }
+      nav a { color: #ffc93c; margin-right: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Lantern Peak - art preview</h1>
+    <nav><a href="#juniper">Juniper</a><a href="#textures">Textures</a><a href="#zones">Zones</a><a href="#seams">Seams</a><a href="#phaser">Phaser check</a> | v2: <a href="#v2-count">Count icons</a><a href="#v2-tools">Tools</a><a href="#v2-hats">Hats</a><a href="#v2-flurries">Flurries</a><a href="#v2-items">Items</a><a href="#v2-rooms">Rooms</a><a href="#v2-areas">Side areas</a> (<a href="?v2">v2 only</a>)</nav>
+    <div id="stats">building...</div>
+    <div id="app"></div>
+    <script type="module" src="/src/art/preview.ts"></script>
+  </body>
+</html>
